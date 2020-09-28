@@ -10,4 +10,4 @@ spec:
       containers:
         - image: REGISTRY_URL/replace-me-namespace/edgenodereactpostgrescontactsbackend:BUILD_NUMBER
           ports:
-            - containerPort: 3000
+            - containerPort: 4000
