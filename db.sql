@@ -1,5 +1,30 @@
 --Script to create the Postgres structure to store the contacts
 
+-- Role: test
+-- DROP ROLE test;
+
+CREATE ROLE test WITH
+  LOGIN
+  NOSUPERUSER
+  INHERIT
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION
+  ENCRYPTED PASSWORD 'md5a5dc3f26d9c9719ab75f8f1398d74823';
+
+-- Database: test
+
+-- DROP DATABASE test;
+
+CREATE DATABASE test
+    WITH 
+    OWNER = test
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
 -- Table: public.contacts
 
 -- DROP TABLE public.contacts;
